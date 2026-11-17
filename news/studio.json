@@ -1,0 +1,11 @@
+{
+  "posts": [
+    {
+      "id": "studio-105",
+      "title": "Aura Studio 1.0.5-ə qədər nələr dəyişdi?",
+      "category": "Yeniliklər",
+      "date": "2026-11-17",
+      "body": "Aura Studio AutoCAD-də çoxaşırımlı rigelin açılışını hazırlamaq üçün yaradılıb. Hər aşırımın ölçüsünü və ox adını ayrıca daxil etmək olur. 1.0.5-də hər aşırım öz uzunluğu ilə önizləmədə görünür və Studio hesaba təyin edilmiş Rigel-ə uyğun formanı açır.\n\n1.0.2 — hesab və komanda məlumatları, cihaz axtarışı, bildirişlər və dəstək söhbətləri əlavə olundu. Trial 3 gün və 15 generasiya verir. Studio Plus-da hər istifadəçi üçün aylıq limit 500 generasiyadır.\n\n1.0.3 — Studio-nun içindən yeniləmə dəstəyi əlavə olundu. Sonrakı buraxılışları proqram xəbər verir, endirir və quraşdırır.\n\n1.0.4 — idarə panelində Pro və Plus paketlərini təqdim edən qısa video əlavə olundu. Videoya klikləyəndə Paketlər bölməsi açılır.\n\n1.0.5 — açılışda tam ekran, pəncərə ölçüsü və mövqeyini yadda saxlama, X düyməsinin davranışı, interfeys ölçüsü və AutoCAD versiyası seçimi əlavə olundu. Ayarlarda ad və açıqlamaya görə axtarış var. Admin-də aktiv komandalar, hesab müddəti filtrləri və versiyalı Rigel kitabxanası əlavə olundu."
+    }
+  ]
+}
