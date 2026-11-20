@@ -25,7 +25,7 @@
   if(!noToken&&tokens?.access_token)headers.Authorization='Bearer '+tokens.access_token;
   const body={...payload,action,mode:'admin',device_id:device,device_name:'Aura Admin Veb',app_version:'1.0.6'};
   if(action.startsWith('mfa.')||action==='auth.password')body.refresh_token=tokens?.refresh_token;
-  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
+  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),10000);
   try{
    const res=await fetch(endpoint,{method:'POST',headers,body:JSON.stringify(body),signal:controller.signal,credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer'});
    const data=await res.json().catch(()=>({error:'Server cavabı oxunmadı.'}));
@@ -49,9 +49,10 @@
  }
  async function request(action,payload={}){
   if(action==='auth.state')return empty();
-  if(action==='auth.login'){profile=null;pending=null;return accept(await call(action,payload,true));}
+  if(action==='auth.login'){profile=null;pending=null;save(null);return accept(await call(action,payload,true));}
   if(action==='auth.logout'){
-   try{if(session||pending)await call(action);}finally{save(null);pending=null;profile=null;window.auraRigelLibrary=[];}
+   try{if(session||pending)await call(action);}catch{/* Local logout must still close the panel when offline. */}
+   finally{save(null);pending=null;profile=null;window.auraRigelLibrary=[];}
    return empty();
   }
   if(action==='mfa.verify'){return accept(await call(action,{...payload,factor_id:pending?.factor_id||payload.factor_id}));}
