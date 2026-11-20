@@ -1,0 +1,24 @@
+.aura-notification-bell{display:inline-flex;position:relative;align-items:center;justify-content:center;margin-left:auto;margin-right:8px;padding:7px 9px}
+.aura-notification-bell svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.aura-unread{font-size:10px;position:absolute;right:-5px;top:-6px;background:var(--green,#b8ef70);color:#142013;border-radius:1rem;padding:1px 5px}
+.aura-notification-list,.aura-conversation-list{display:grid;gap:9px;margin:12px 0}
+.aura-notification-list article,.aura-thread-log article{padding:12px;border:1px solid var(--line);border-radius:8px;overflow-wrap:anywhere}
+.aura-notification-list small,.aura-thread-log small{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+.aura-notification-list article p,.aura-thread-log p{white-space:pre-wrap;margin:8px 0}
+.aura-notification-list .aura-notification-new,.aura-thread-log .aura-thread-admin{border-left:3px solid var(--green,#b8ef70)}
+.aura-thread-log{display:grid;gap:8px;max-height:380px;overflow:auto;margin:14px 0}
+.aura-communication-card{margin-top:16px}
+.aura-communication-card textarea{display:block;width:100%;padding:10px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;margin-bottom:10px}
+.aura-device-filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:12px}
+.aura-device-filters input,.aura-device-filters select{padding:8px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px}
+.aura-device-filters input{min-width:min(260px,100%)}
+.topbar{position:relative}
+.topbar:has(.aura-package-promo:not([hidden])){height:106px}
+.aura-package-promo{position:absolute;left:0;right:0;margin-inline:auto;width:min(49%,520px);padding:0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#121d1b;cursor:pointer;line-height:0}
+.aura-package-promo video{display:block;width:100%;height:auto;pointer-events:none}
+.aura-package-promo:hover,.aura-package-promo:focus-visible{border-color:var(--green)}
+@media(max-width:1120px){.aura-package-promo{width:42%}.topbar:has(.aura-package-promo:not([hidden])){height:90px}}
+@media(max-width:920px){.aura-package-promo{display:none}.topbar:has(.aura-package-promo:not([hidden])){height:65px}}
+
+.aura-package-promo:active{transform:none}
+.settingsSearchRow{margin-top:16px;border-top:1px solid var(--line)}.settingsSearchRow input.settingSelect{width:min(48%,280px);min-width:0}
