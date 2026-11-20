@@ -74,7 +74,10 @@
  window.chrome=window.chrome||{};
  window.chrome.webview={addEventListener(type,listener){if(type==='message')listeners.add(listener);},postMessage(message){
   if(message.type==='host.ready'){
-   Promise.resolve().then(async()=>{let state=empty();try{if(session)state=await refresh();}catch{save(null);}emit({type:'auth.state',state});});return;
+   Promise.resolve().then(async()=>{
+    if(document.readyState==='loading')await new Promise(resolve=>document.addEventListener('DOMContentLoaded',resolve,{once:true}));
+    let state=empty();try{if(session)state=await refresh();}catch{save(null);}emit({type:'auth.state',state});
+   });return;
   }
   if(message.type==='api')request(message.action,message.payload).then(result=>emit({type:'api.result',requestId:message.requestId,ok:true,result})).catch(error=>emit({type:'api.result',requestId:message.requestId,ok:false,error:error.message}));
  }};
