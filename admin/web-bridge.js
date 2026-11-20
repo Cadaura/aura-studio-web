@@ -31,7 +31,11 @@
    const data=await res.json().catch(()=>({error:'Server cavabı oxunmadı.'}));
    if(!res.ok)throw Object.assign(Error(data.error||'Əməliyyat tamamlanmadı.'),{status:res.status});
    return data;
-  }catch(error){if(error.name==='AbortError')throw Error('Server cavabı gecikir. Yenidən sınayın.');throw error;}
+  }catch(error){
+   if(error.name==='AbortError')throw Error('Server cavabı gecikir. Yenidən sınayın.');
+   if(error.name==='TypeError')throw Error('Serverə qoşulmaq olmadı. İnternet bağlantısını yoxlayın.');
+   throw error;
+  }
   finally{clearTimeout(timer);}
  }
  async function refresh(){
@@ -82,4 +86,5 @@
   if(message.type==='api')request(message.action,message.payload).then(result=>emit({type:'api.result',requestId:message.requestId,ok:true,result})).catch(error=>emit({type:'api.result',requestId:message.requestId,ok:false,error:error.message}));
  }};
  setInterval(async()=>{if(!profile||document.hidden)return;try{emit({type:'auth.state',state:await request('auth.sync')});}catch(error){if([400,401,403].includes(error.status)){save(null);profile=null;emit({type:'auth.state',state:empty()});}}},300000);
+ window.addEventListener('offline',()=>{if(profile)emit({type:'auth.state',state:{...empty(),authenticated:true,profile,online:false}});});
 })();
