@@ -1,0 +1,15 @@
+<svg class="aura-builder" viewBox="0 0 260 190" role="img" aria-label="Alətlə işləyən və kaska tutan kiçik Aura robotu">
+ <defs><linearGradient id="botShell" x2="1" y2="1"><stop stop-color="#708e8d"/><stop offset="1" stop-color="#263f42"/></linearGradient></defs>
+ <ellipse cx="130" cy="173" rx="77" ry="9" fill="currentColor" opacity=".06"/>
+ <path d="M38 162h188M65 162v-27h49" fill="none" stroke="currentColor" stroke-opacity=".18" stroke-width="3"/>
+ <g class="builder-body"><path d="M111 140l-4 23h17l5-23m12 0 4 23h17l-7-27" fill="url(#botShell)" stroke="#7e9b99" stroke-width="2"/>
+ <rect x="101" y="91" width="64" height="52" rx="18" fill="url(#botShell)" stroke="#7e9b99" stroke-width="2"/>
+ <rect x="122" y="105" width="23" height="22" rx="7" fill="#142c2c"/><path d="M130 120v-8h7" fill="none" stroke="var(--green)" stroke-width="3"/>
+ <g class="builder-head"><path d="M129 42v-9" stroke="#819f9b" stroke-width="3"/><circle cx="129" cy="30" r="4" fill="var(--green)"/>
+ <rect x="95" y="44" width="74" height="48" rx="19" fill="url(#botShell)" stroke="#9db3ad" stroke-width="2"/>
+ <rect x="103" y="54" width="58" height="28" rx="11" fill="#102629"/><g class="builder-eyes" fill="var(--green)"><rect x="114" y="65" width="9" height="5" rx="2"/><rect x="140" y="65" width="9" height="5" rx="2"/></g></g>
+ <g class="builder-tool-arm"><path d="M105 101L87 115 75 105" fill="none" stroke="#708e8d" stroke-width="12" stroke-linecap="round"/><circle cx="86" cy="114" r="7" fill="#abc1b9"/>
+ <path d="M72 110L87 86m-1 1c-9 0-10-8-7-13l4 6 6-1 2-6c7 5 5 12-1 15" fill="#b9cbc5" stroke="#c9d9d0" stroke-width="2"/><circle cx="73" cy="108" r="6" fill="#6e8c88"/></g>
+ <g class="builder-helmet-arm"><path d="M163 102l17 16 14-15" fill="none" stroke="#708e8d" stroke-width="12" stroke-linecap="round"/>
+ <g class="builder-helmet"><path d="M177 97c0-25 36-25 36 0z" fill="#e8ad4a"/><path d="M194 77v18m-20 3h42" stroke="#f4d38a" stroke-width="5" stroke-linecap="round"/><path d="M183 99h26" stroke="#966f2d" stroke-width="3"/></g></g></g>
+ <g class="builder-sparks" stroke="var(--green)" stroke-width="2" stroke-linecap="round"><path d="M60 93l-5-3m10-5-1-6m-6 23h-6"/></g></svg>
