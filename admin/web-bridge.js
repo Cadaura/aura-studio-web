@@ -70,7 +70,13 @@
    const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='Aura-Rigeller-'+new Date().toISOString().slice(0,10)+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
    return {saved:true,name:link.download};
   }
-  if(action==='admin.standardRigel'||action==='admin.fullRigel')return authorized('admin.builtinRigel',{...payload,builtin:action==='admin.fullRigel'?'full':'standard'});
+  if(action==='admin.fullRigel'){
+   const library=await authorized('admin.rigelLibrary',{});
+   const full=library.items.find(item=>item.label==='Aura Rigel Full 1.0.1');
+   if(!full)throw Error('Full Rigel kitabxanada tapılmadı. Səhifəni yeniləyin.');
+   return authorized('admin.rigel',{...payload,label:full.label,source:full.source});
+  }
+  if(action==='admin.standardRigel')return authorized('admin.builtinRigel',{...payload,builtin:'standard'});
   const result=await authorized(action,payload);
   if(action==='admin.overview')window.auraRigelLibrary=(await authorized('admin.rigelLibrary',{})).items;
   return result;

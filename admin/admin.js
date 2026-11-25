@@ -416,7 +416,7 @@
    const query=search.value.trim().toLocaleLowerCase('az');
    list.replaceChildren(table(['Rigel versiyası','Təyinat'],[
     {label:'Standart Aura Rigel',builtIn:'admin.standardRigel'},
-    {label:'Aura Rigel Full 1.0.1',builtIn:'admin.fullRigel'},...library
+    {label:'Aura Rigel Full 1.0.1',builtIn:'admin.fullRigel'},...library.filter(item=>item.label!=='Aura Rigel Full 1.0.1')
    ].filter(item=>keyOf(item).includes(query)).map(item=>{
    const actions=node('div');
    actions.append(action('Komandaya ver',()=>assign(item,false)),action('Hesaba ver',()=>assign(item,true)));
